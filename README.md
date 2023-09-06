@@ -2,6 +2,7 @@
 
 *This is a proof of concept plugin for WordPress to display embeded WACZ files.*
 
+# shortcodes method
 This plugin uses wordpress's [shortcodes](https://www.smashingmagazine.com/2012/05/wordpress-shortcodes-complete-guide/) to [embed a replayweb.page](https://replayweb.page/docs/embedding) component into WordPress.
 
 This plugin will 
@@ -31,6 +32,18 @@ Link to a WACZ file hosted somewhere else and set height to 100%
 Reference a WACZ file uploaded to WordPress and use the `replay-with-info` embed mode  
 `[wacz_url media_id="56" embed="replay-with-info"]`
 
+
+# javascript method
+
+This plugin also exposes the `starling_replaywebpage` function which has the same functionality as the shortcode method. It takes a dict of attributes just like above.
+
+## Example
+
+```
+<script>
+document.write(starling_replaywebpage ( { media_id:"56", height:"600px" }))
+</script>
+```
 
 ## Using this plugin
 

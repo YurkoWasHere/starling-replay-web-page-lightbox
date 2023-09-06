@@ -12,6 +12,7 @@ function wacz_mime_types( $mimes ) {
     // New allowed mime types.
     $mimes['wacz'] = 'application/wacz';
     $mimes['warc'] = 'application/warc';
+    $mimes['json'] = 'application/json';
    
     return $mimes;
 }

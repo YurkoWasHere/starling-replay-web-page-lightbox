@@ -30,18 +30,30 @@ function display_wacz($atts) {
     // Extract and sanitize the URL from the shortcode attribute
 
     $url="";
-    if (isset($atts['url'])) {
-      $url = esc_url($atts['url']);
+    if (isset($atts['remote_url'])) {
+      $url = esc_url($atts['remote_url']);
     }
     if (isset($atts['media_id'])) {
       $url = esc_url(wp_get_attachment_url($atts['media_id']));
     }
 
-    // Generate and return the HTML with the iframe
+    // Current plugin directory 
     $plugin_dir_url = plugins_url('', __FILE__);
-    $height="400px";
-    $width="100%";
-    return '<replay-web-page source="' . $url . '"  replayBase="' . $plugin_dir_url . "/replay/" . '" style="height:' . $height . ';width:' . $width . ';"></replay-web-page>';
+
+    //Attributes
+    $height = isset($atts['height']) ? $atts['height'] : "400px";
+    $width = isset($atts['width']) ? $atts['width'] : "100%";
+
+
+    // Generate and return the replay-web-page control
+    $ret = '<replay-web-page source="' . $url . '"';
+    $ret .= ' replayBase="' . $plugin_dir_url . "/replay/" . '"';
+    $ret .= ' style="height:' . $height . ';width:' . $width . '"';
+    if (isset($atts['url'])) $ret .= ' url="' . $atts['url'] . '"';
+    if (isset($atts['embed'])) $ret .= ' embed="' . $atts['embed'] . '"';
+    $ret .= '></replay-web-page>';
+
+    return $ret;    
 }
 // Register the shortcode to use in posts or pages
 add_shortcode('wacz_url', 'display_wacz');

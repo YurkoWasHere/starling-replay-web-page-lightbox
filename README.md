@@ -28,7 +28,7 @@ This plugin will
 Link to a WACZ file hosted somewhere else and set height to 100%  
 `[wacz_url remote_url="http://someurl.com/somefile.wacz" height="100%"]`
 
-Reference a WACZ file uploaded to WordPress and use the `replay-with-info` embed mode
+Reference a WACZ file uploaded to WordPress and use the `replay-with-info` embed mode  
 `[wacz_url media_id="56" embed="replay-with-info"]`
 
 

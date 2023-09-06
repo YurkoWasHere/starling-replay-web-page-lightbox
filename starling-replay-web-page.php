@@ -11,10 +11,8 @@ function wacz_mime_types( $mimes ) {
     
     // New allowed mime types.
     $mimes['wacz'] = 'application/wacz';
+    $mimes['warc'] = 'application/warc';
    
-    // Optional. Remove a mime type.
-    unset( $mimes['exe'] );
-    
     return $mimes;
 }
 add_filter( 'upload_mimes', 'wacz_mime_types' );

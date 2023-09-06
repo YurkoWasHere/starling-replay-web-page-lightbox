@@ -12,6 +12,7 @@ function wacz_mime_types( $mimes ) {
     // New allowed mime types.
     $mimes['wacz'] = 'application/wacz';
     $mimes['warc'] = 'application/warc';
+    $mimes['json'] = 'application/json';
    
     return $mimes;
 }
@@ -20,7 +21,8 @@ add_filter( 'upload_mimes', 'wacz_mime_types' );
 //Add script to head
 function add_script_to_head() {
 //    wp_enqueue_script('custom-script', get_template_directory_uri() . '/custom-script.js', array(), '1.0', false);
-    wp_enqueue_script('custom-script', 'https://cdn.jsdelivr.net/npm/replaywebpage@1.8.4/ui.js', array(), '1.0', false);
+    wp_enqueue_script('starling-replay-ui', 'https://cdn.jsdelivr.net/npm/replaywebpage@1.8.4/ui.js', array(), '1.0', false);
+    wp_enqueue_script('starling-replay-js', plugins_url('', __FILE__).  '/starling-replay-web-page-js.php?api_url=' . esc_url_raw(rest_url()), array(), '1.0', false);
 }
 add_action('wp_enqueue_scripts', 'add_script_to_head');
 

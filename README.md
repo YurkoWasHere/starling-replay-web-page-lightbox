@@ -1,4 +1,4 @@
-# starling-replay-web-page
+# starling-replay-web-page_lightbox
 
 *This is a proof of concept plugin for WordPress to display embeded WACZ files.*
 

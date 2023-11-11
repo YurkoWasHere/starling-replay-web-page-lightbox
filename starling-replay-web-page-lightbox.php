@@ -7,7 +7,7 @@ Author: Starling Lab
 */
 
 // Allow wacz uploads
-function wacz_mime_types( $mimes ) {
+function wacz_mime_types_starling_lightbox( $mimes ) {
     
     // New allowed mime types.
     $mimes['wacz'] = 'application/wacz';
@@ -16,21 +16,20 @@ function wacz_mime_types( $mimes ) {
    
     return $mimes;
 }
-add_filter( 'upload_mimes', 'wacz_mime_types' );
+add_filter( 'upload_mimes', 'wacz_mime_types_starling_lightbox' );
 
 //Add script to head
-function add_script_to_head() {
+function add_script_to_head_starling_lightbox() {
     $plugin_dir_url = plugins_url('', __FILE__);
 //    wp_enqueue_script('custom-script', get_template_directory_uri() . '/custom-script.js', array(), '1.0', false);
     wp_enqueue_script('starling-replay-ui', 'https://cdn.jsdelivr.net/npm/replaywebpage@1.8.4/ui.js', array(), '1.0', false);
     wp_enqueue_script('starling-replay-ui', plugins_url('', __FILE__) . 'index-8b4e77ff.js', array(), '1.0', false);
     wp_register_style('starling-lightbox-css', plugins_url('', __FILE__) . '/index-753408e7.css', array(), '1.0', 'all');
     wp_enqueue_style('starling-lightbox-css');
-    wp_enqueue_script('starling-replay-js', plugins_url('', __FILE__).  '/starling-replay-web-page-js.php?api_url=' . esc_url_raw(rest_url()), array(), '1.0', false);
-    
+   
 }
 
-add_action('wp_enqueue_scripts', 'add_script_to_head');
+add_action('wp_enqueue_scripts', 'add_script_to_head_starling_lightbox');
 
 
 // Write HTML code for the replay site

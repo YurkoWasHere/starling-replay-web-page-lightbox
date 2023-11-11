@@ -23,7 +23,7 @@ function add_script_to_head_starling_lightbox() {
     $plugin_dir_url = plugins_url('', __FILE__);
 //    wp_enqueue_script('custom-script', get_template_directory_uri() . '/custom-script.js', array(), '1.0', false);
     wp_enqueue_script('starling-replay-ui', 'https://cdn.jsdelivr.net/npm/replaywebpage@1.8.4/ui.js', array(), '1.0', false);
-    wp_enqueue_script('starling-replay-lightbox-ui', plugins_url('', __FILE__) . 'index-8b4e77ff.js', array(), '1.0', false);
+    wp_enqueue_script('starling-replay-lightbox-ui', plugins_url('', __FILE__) . '/index-8b4e77ff.js', array(), '1.0', false);
     wp_register_style('starling-lightbox-css', plugins_url('', __FILE__) . '/index-753408e7.css', array(), '1.0', 'all');
     wp_enqueue_style('starling-lightbox-css');
    
@@ -57,7 +57,7 @@ function display_wacz_lightbox($atts) {
     $filename = $pathInfo['basename'];
 
     // Generate and return the replay-web-page control
-    $ret = '<wacz-lightbox filename="' . $filename . '"  path="' . $directoryPath . '"';
+    $ret = '<wacz-lightbox filename="' . $filename . '"  path="' . $directoryPath . '/"';
     $ret .= ' replayBase="' . $plugin_dir_url . "/replay/" . '"';
     $ret .= ' style="height:' . $height . ';width:' . $width . '"';
     $ret .= '></wacz-lightbox>';

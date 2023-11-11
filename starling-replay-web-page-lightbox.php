@@ -34,7 +34,7 @@ add_action('wp_enqueue_scripts', 'add_script_to_head');
 
 
 // Write HTML code for the replay site
-function display_wacz($atts) {
+function display_wacz_lightbox($atts) {
     // Extract and sanitize the URL from the shortcode attribute
 
     $url="";
@@ -66,4 +66,4 @@ function display_wacz($atts) {
     return $ret;    
 }
 // Register the shortcode to use in posts or pages
-add_shortcode('wacz_url', 'display_wacz');
+add_shortcode('wacz__lightbox_url', 'display_wacz_lightbox');

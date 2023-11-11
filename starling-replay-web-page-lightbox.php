@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: Replay Web Page
-Description: Display WACZ player.
+Plugin Name: Replay Web Page with Lightbox
+Description: Display WACZ with lightbox player.
 Version: 0.1
 Author: Starling Lab
 */
@@ -66,4 +66,4 @@ function display_wacz_lightbox($atts) {
     return $ret;    
 }
 // Register the shortcode to use in posts or pages
-add_shortcode('wacz__lightbox_url', 'display_wacz_lightbox');
+add_shortcode('wacz_lightbox_url', 'display_wacz_lightbox');

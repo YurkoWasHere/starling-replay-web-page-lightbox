@@ -59,7 +59,7 @@ function display_wacz_lightbox($atts) {
     // Generate and return the replay-web-page control
     $ret = '<wacz-lightbox filename="' . $filename . '"  path="' . $directoryPath . '/"';
     $ret .= ' replayBase="' . $plugin_dir_url . "/replay/" . '"';
-    $ret .= ' style="height:' . $height . ';width:' . $width . '"';
+    $ret .= ' style="height:' . $height . ';width:' . $width . '; display: block;"';
     $ret .= '></wacz-lightbox>';
 
     return $ret;    

@@ -48,7 +48,7 @@ function display_wacz_lightbox($atts) {
     $plugin_dir_url = plugins_url('', __FILE__);
 
     //Attributes
-    $height = isset($atts['height']) ? $atts['height'] : "400px";
+    $height = isset($atts['height']) ? $atts['height'] : "5vh";
     $width = isset($atts['width']) ? $atts['width'] : "100%";
 
 
